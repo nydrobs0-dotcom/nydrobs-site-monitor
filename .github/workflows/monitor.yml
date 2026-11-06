@@ -1,0 +1,34 @@
+name: Site monitor
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+permissions:
+  issues: write
+  contents: write
+concurrency:
+  group: site-monitor
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check sites and open or close issues
+        run: node check.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+      - name: Save status when it changed
+        run: |
+          if [ -n "$(git status --porcelain status.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add status.json
+            git commit -m "monitor: update status"
+            git push
+          fi

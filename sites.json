@@ -1,0 +1,19 @@
+{
+  "sites": [
+    {
+      "name": "API de saúde (ready)",
+      "url": "https://nydrobs-travel.nydrobs0.workers.dev/api/health/ready",
+      "expectStatus": 200
+    },
+    {
+      "name": "Página inicial",
+      "url": "https://nydrobs-travel.nydrobs0.workers.dev/",
+      "expectStatus": 200
+    },
+    {
+      "name": "Hospedagens",
+      "url": "https://nydrobs-travel.nydrobs0.workers.dev/hospedagens",
+      "expectStatus": 200
+    }
+  ]
+}
