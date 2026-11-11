@@ -1,8 +1,8 @@
 {
-  "heartbeatAt": "2026-11-06T18:27:10.479Z",
+  "heartbeatAt": "2026-11-11T17:17:10.796Z",
   "sites": {
-    "https://nydrobs-travel.nydrobs0.workers.dev/api/health/ready": "up",
-    "https://nydrobs-travel.nydrobs0.workers.dev/": "up",
-    "https://nydrobs-travel.nydrobs0.workers.dev/hospedagens": "up"
+    "https://nydrobs-travel.nydrobs0.workers.dev/api/health/ready": "down",
+    "https://nydrobs-travel.nydrobs0.workers.dev/": "down",
+    "https://nydrobs-travel.nydrobs0.workers.dev/hospedagens": "down"
   }
 }
